@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinCraft — премиальный подбор карт, кредитов, РКО и открытие ИП</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">FinCraft</div>
+    <a href="#quiz" class="btn">Подобрать за 60 сек</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Премиальный подбор финансовых услуг</h1>
+    <p>FinCraft — ваш личный финансовый ассистент. Бесплатно подберём лучшие карты, кредиты, РКО и откроем ИП. Только надёжные банки и выгодные условия.</p>
+  </div>
+</section>
+
+<section class="banks">
+  <div class="container">
+    <h2>Сотрудничаем с ведущими банками</h2>
+    <div class="bank-list">
+      <span>Сбербанк</span>
+      <span>Тинькофф</span>
+      <span>ВТБ</span>
+      <span>Альфа-Банк</span>
+      <span>Райффайзен</span>
+      <span>Газпромбанк</span>
+      <span>Русский Стандарт</span>
+      <span>Росбанк</span>
+      <span>Открытие</span>
+      <span>Совкомбанк</span>
+      <span>ЮниКредит</span>
+      <span>Хоум Кредит</span>
+      <span>Промсвязьбанк</span>
+      <span>МКБ</span>
+      <span>Уралсиб</span>
+    </div>
+  </div>
+</section>
+
+<section id="quiz" class="quiz">
+  <form id="quizForm">
+    <div class="quiz-step active" data-step="1">
+      <h3>1. Выберите цель обращения</h3>
+      <div class="options">
+        <button type="button" data-value="Дебетовая карта">Дебетовая карта</button>
+        <button type="button" data-value="Кредитная карта">Кредитная карта</button>
+        <button type="button" data-value="Кредит">Кредит</button>
+        <button type="button" data-value="Займ">Займ</button>
+        <button type="button" data-value="РКО для ИП">РКО для ИП</button>
+        <button type="button" data-value="РКО для ООО">РКО для ООО</button>
+        <button type="button" data-value="Открытие ИП">Открытие ИП</button>
+      </div>
+    </div>
+    <div class="quiz-step" data-step="2">
+      <h3>2. Уточните параметры</h3>
+      <div class="options" id="paramOptions"></div>
+    </div>
+    <div class="quiz-step" data-step="3">
+      <h3>3. Ваши данные</h3>
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <button type="submit" class="btn">Отправить заявку</button>
+    </div>
+  </form>
+        <button type="button" class="quiz-back" onclick="prevStep()">⬅ Назад</button>
+        
+    <button onclick="history.back()" style="
+      margin-top: 10px;
+      padding: 10px 20px; 
+      background-color: #007bff; 
+      color: white; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer;">
+      ⬅ Вернуться назад
+    </button>
+    
+  <div id="quizSuccess" class="success">✅ Заявка принята! Наш менеджер свяжется с вами.</div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <h2>Отзывы клиентов</h2>
+    <div class="reviews-grid">
+      <div class="review"><strong>Анна, Москва</strong>«Оформила дебетовую карту через FinCraft — вернула 12 000 ₽ кэшбэком за полгода!»</div>
+      <div class="review"><strong>Игорь, Казань</strong>«Нужен был кредит, подобрали под 9,9% годовых без скрытых комиссий. Очень доволен!»</div>
+      <div class="review"><strong>Марина, СПб</strong>«Помогли открыть РКО для ИП за 1 день. Отличный сервис!»</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Часто задаваемые вопросы</h2>
+    <div class="faq-item">
+      <div class="faq-question">Сколько стоит подбор услуги?</div>
+      <div class="faq-answer">Подбор полностью бесплатный. Мы работаем напрямую с банками и сервисами.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Сколько времени занимает оформление?</div>
+      <div class="faq-answer">В среднем 1–2 дня. Для карт — часто уже в день заявки.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Кому доступны услуги?</div>
+      <div class="faq-answer">Любому гражданину РФ старше 18 лет, а также ИП и ООО, зарегистрированным в России.</div>
+    </div>
+  </div>
+</section>
+
+<section class="counter">
+  <div class="container">
+    <span id="counterValue">Сегодня уже 0 клиентов оставили заявки 🚀</span>
+  </div>
+</section>
+
+<script src="script.js"></script>
+
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>Свяжитесь с нами</h2>
+    <form action="https://formspree.io/f/meolppbk" method="POST" class="contact-form">
+      <label>Email:
+        <input type="email" name="email" required>
+      </label>
+      <label>Сообщение:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit" class="btn">Отправить</button>
+    </form>
+  </div>
+</section>
+
+
+<section class="advantages">
+  <div class="container">
+    <h2>Наши преимущества</h2>
+    <ul>
+      <li>🔹 Подбор услуг абсолютно <strong>БЕСПЛАТНО</strong></li>
+      <li>🔹 Работаем только с надежными банками</li>
+      <li>🔹 Экономим ваше время — заявки занимают не более 60 секунд</li>
+      <li>🔹 Персональный подход и премиальный сервис</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
