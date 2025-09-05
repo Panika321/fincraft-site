@@ -1,87 +1,82 @@
-/* Общие стили */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
-    color: #333;
-    line-height: 1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f19;
+  color: #fff;
 }
 
-/* Хедер */
-header {
-    background: linear-gradient(135deg, #004080, #0066cc);
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  text-align: center;
+  padding: 80px 20px;
 }
 
-header p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-/* Секция */
-section {
-    padding: 50px 20px;
-    text-align: center;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    color: #222;
+.cta {
+  background: #00e0ff;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* Сетка карточек */
-.logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+.cta:hover {
+  background: #00bcd4;
 }
 
-/* Карточки */
-.card {
-    background: #fff;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.partners {
+  padding: 60px 20px;
+  background: #111827;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+.partners h2 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.card img {
-    max-width: 100px;
-    height: auto;
-    margin-bottom: 12px;
+.banks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
 }
 
-.card p {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #222;
-    margin: 0;
+.bank {
+  background: #1f2937;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
 }
 
-/* Футер */
+.bank img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.bank:hover {
+  background: #374151;
+}
+
 footer {
-    background: #002d5a;
-    color: #fff;
-    text-align: center;
-    padding: 15px;
-    font-size: 0.9rem;
-    margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
 }
