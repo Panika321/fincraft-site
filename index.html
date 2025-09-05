@@ -5,7 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FinCraft — премиальный подбор карт, кредитов, РКО и открытие ИП</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {margin:0; font-family:Inter, sans-serif; background:#0b1020; color:#fff;}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px}
+    header{background:rgba(10,15,35,.8); position:sticky; top:0; backdrop-filter:blur(10px); z-index:50;}
+    .nav{display:flex; justify-content:space-between; align-items:center; padding:15px 0}
+    .logo{font-weight:700; font-size:22px; background:linear-gradient(90deg,#7c7dff,#54e6c1); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .btn{padding:14px 22px; border-radius:14px; border:none; background:linear-gradient(90deg,#7c7dff,#54e6c1); color:#fff; font-weight:600; cursor:pointer; transition:.4s; box-shadow:0 0 15px rgba(124,125,255,.4);}
+    .btn:hover{transform:scale(1.08); box-shadow:0 0 25px rgba(124,125,255,.7);}
+    .hero{padding:100px 0; text-align:center; position:relative; overflow:hidden;}
+    .hero h1{font-size:48px; margin-bottom:20px; background:linear-gradient(90deg,#fff,#7c7dff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+    .hero p{color:#c5d0ff; font-size:20px; max-width:700px; margin:0 auto;}
+
+    /* Квиз */
+    .quiz{background:rgba(255,255,255,.05); padding:40px; border-radius:20px; max-width:600px; margin:60px auto; box-shadow:0 0 30px rgba(124,125,255,.3);}
+    .quiz-step{display:none;}
+    .quiz-step.active{display:block; animation:fadeIn .7s;}
+    .quiz h3{margin-bottom:25px; font-size:22px;}
+    .quiz .options{display:grid; gap:14px;}
+    .quiz .options button{padding:14px; border-radius:12px; border:1px solid rgba(255,255,255,.2); background:rgba(255,255,255,.08); color:#fff; cursor:pointer; transition:.3s; font-weight:500}
+    .quiz .options button:hover{background:rgba(255,255,255,.2); transform:translateY(-2px)}
+    .quiz input{width:100%; padding:14px; border-radius:12px; border:none; margin-bottom:14px;}
+    .success{display:none; padding:25px; background:rgba(84,230,193,0.15); border:1px solid #54e6c1; border-radius:14px; color:#54e6c1; font-weight:600; text-align:center;}
+
+    @keyframes fadeIn {from{opacity:0; transform:translateY(30px)} to{opacity:1; transform:translateY(0)}}
+  </style>
 </head>
 <body>
 <header>
@@ -22,31 +46,8 @@
   </div>
 </section>
 
-<section class="banks">
-  <div class="container">
-    <h2>Сотрудничаем с ведущими банками</h2>
-    <div class="bank-list">
-      <span>Сбербанк</span>
-      <span>Тинькофф</span>
-      <span>ВТБ</span>
-      <span>Альфа-Банк</span>
-      <span>Райффайзен</span>
-      <span>Газпромбанк</span>
-      <span>Русский Стандарт</span>
-      <span>Росбанк</span>
-      <span>Открытие</span>
-      <span>Совкомбанк</span>
-      <span>ЮниКредит</span>
-      <span>Хоум Кредит</span>
-      <span>Промсвязьбанк</span>
-      <span>МКБ</span>
-      <span>Уралсиб</span>
-    </div>
-  </div>
-</section>
-
 <section id="quiz" class="quiz">
-  <form id="quizForm">
+  <form id="quizForm" action="https://formspree.io/f/meolppbk" method="POST">
     <div class="quiz-step active" data-step="1">
       <h3>1. Выберите цель обращения</h3>
       <div class="options">
@@ -68,48 +69,70 @@
       <input type="text" name="name" placeholder="Имя" required>
       <input type="tel" name="phone" placeholder="Телефон" required>
       <input type="email" name="email" placeholder="Email" required>
+      <input type="hidden" name="goal" id="goalInput">
+      <input type="hidden" name="params" id="paramsInput">
       <button type="submit" class="btn">Отправить заявку</button>
     </div>
   </form>
   <div id="quizSuccess" class="success">✅ Заявка принята! Наш менеджер свяжется с вами.</div>
 </section>
 
-<section class="reviews">
-  <div class="container">
-    <h2>Отзывы клиентов</h2>
-    <div class="reviews-grid">
-      <div class="review"><strong>Анна, Москва</strong>«Оформила дебетовую карту через FinCraft — вернула 12 000 ₽ кэшбэком за полгода!»</div>
-      <div class="review"><strong>Игорь, Казань</strong>«Нужен был кредит, подобрали под 9,9% годовых без скрытых комиссий. Очень доволен!»</div>
-      <div class="review"><strong>Марина, СПб</strong>«Помогли открыть РКО для ИП за 1 день. Отличный сервис!»</div>
-    </div>
-  </div>
-</section>
+<script>
+  const quizForm = document.getElementById('quizForm');
+  const steps = document.querySelectorAll('.quiz-step');
+  let selectedGoal = '';
+  let selectedParam = '';
 
-<section class="faq">
-  <div class="container">
-    <h2>Часто задаваемые вопросы</h2>
-    <div class="faq-item">
-      <div class="faq-question">Сколько стоит подбор услуги?</div>
-      <div class="faq-answer">Подбор полностью бесплатный. Мы работаем напрямую с банками и сервисами.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Сколько времени занимает оформление?</div>
-      <div class="faq-answer">В среднем 1–2 дня. Для карт — часто уже в день заявки.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-question">Кому доступны услуги?</div>
-      <div class="faq-answer">Любому гражданину РФ старше 18 лет, а также ИП и ООО, зарегистрированным в России.</div>
-    </div>
-  </div>
-</section>
+  document.querySelectorAll('[data-step="1"] button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedGoal = btn.dataset.value;
+      showStep(2);
+      const paramOptions = document.getElementById('paramOptions');
+      paramOptions.innerHTML = '';
+      if(selectedGoal.includes('карта')){
+        ['Кэшбэк','Мили','Премиум-сервис','Без разницы'].forEach(opt => addOption(opt));
+      } else if(selectedGoal.includes('Кредит') || selectedGoal.includes('Займ')){
+        ['До 100 тыс','100–500 тыс','Более 500 тыс'].forEach(opt => addOption(opt));
+      } else if(selectedGoal.includes('РКО')){
+        ['Низкая комиссия','Быстрые платежи','Удобный онлайн-банк'].forEach(opt => addOption(opt));
+      } else if(selectedGoal.includes('ИП')){
+        ['Уже работаю','Только начинаю'].forEach(opt => addOption(opt));
+      }
+    });
+  });
 
-<section class="counter">
-  <div class="container">
-    <span id="counterValue">Сегодня уже 0 клиентов оставили заявки 🚀</span>
-  </div>
-</section>
+  function addOption(text){
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = text;
+    btn.addEventListener('click', () => {
+      selectedParam = text;
+      document.getElementById('goalInput').value = selectedGoal;
+      document.getElementById('paramsInput').value = selectedParam;
+      showStep(3);
+    });
+    document.getElementById('paramOptions').appendChild(btn);
+  }
 
-<script src="script.js"></script>
+  function showStep(step){
+    steps.forEach(s => s.classList.remove('active'));
+    document.querySelector(`[data-step="${step}"]`).classList.add('active');
+  }
+
+  quizForm.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(quizForm.action, {
+      method: "POST",
+      body: new FormData(quizForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if(response.ok){
+        quizForm.style.display='none';
+        document.getElementById('quizSuccess').style.display='block';
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
