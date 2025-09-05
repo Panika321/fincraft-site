@@ -1,0 +1,62 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+
+header {
+  background: #003366;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 18px;
+}
+
+.partners {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+.partners h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.bank-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.bank-logos img {
+  max-width: 120px;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.bank-logos img:hover {
+  filter: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #003366;
+  color: #fff;
+}
