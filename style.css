@@ -1,35 +1,31 @@
-/* Подключим шрифт Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
+/* Общие стили */
 body {
-    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f9fafc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Шапка */
+/* Хедер */
 header {
-    background: linear-gradient(135deg, #004aad, #0077ff);
-    color: white;
+    background: linear-gradient(135deg, #004080, #0066cc);
+    color: #fff;
     text-align: center;
     padding: 40px 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 header h1 {
-    margin: 0;
     font-size: 2.5rem;
-    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-top: 10px;
+    opacity: 0.9;
 }
 
-/* Секция с банками */
+/* Секция */
 section {
     padding: 50px 20px;
     text-align: center;
@@ -41,46 +37,51 @@ section h2 {
     color: #222;
 }
 
-/* Сетка для логотипов */
+/* Сетка карточек */
 .logos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Карточки с логотипами */
-.logos img {
-    max-width: 120px;
-    height: auto;
-    margin: 0 auto 10px;
-    display: block;
+/* Карточки */
+.card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: white;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.logos img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Текст под логотипами */
-.logos p {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 5px 0 0;
+.card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
 }
 
 /* Футер */
 footer {
-    background: #004aad;
-    color: white;
+    background: #002d5a;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    padding: 15px;
     font-size: 0.9rem;
+    margin-top: 40px;
 }
