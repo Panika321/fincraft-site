@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinCraft — премиальный подбор карт, кредитов, РКО и открытие ИП</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">FinCraft</div>
+    <a href="#quiz" class="btn">Подобрать за 60 сек</a>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <h1>Премиальный подбор финансовых услуг</h1>
+    <p>FinCraft — ваш личный финансовый ассистент. Бесплатно подберём лучшие карты, кредиты, РКО и откроем ИП. Только надёжные банки и выгодные условия.</p>
+  </div>
+</section>
+
+<section id="quiz" class="quiz">
+  <form id="quizForm" action="https://formspree.io/f/meolppbk" method="POST">
+    <div class="quiz-step active" data-step="1">
+      <h3>1. Выберите цель обращения</h3>
+      <div class="options">
+        <button type="button" class="opt" data-value="Дебетовая карта">Дебетовая карта</button>
+        <button type="button" class="opt" data-value="Кредитная карта">Кредитная карта</button>
+        <button type="button" class="opt" data-value="Кредит">Кредит</button>
+        <button type="button" class="opt" data-value="Займ">Займ</button>
+        <button type="button" class="opt" data-value="РКО для ИП">РКО для ИП</button>
+        <button type="button" class="opt" data-value="РКО для ООО">РКО для ООО</button>
+        <button type="button" class="opt" data-value="Открытие ИП">Открытие ИП</button>
+      </div>
+    </div>
+
+    <div class="quiz-step" data-step="2">
+      <h3>2. Уточните параметры</h3>
+      <div class="options" id="paramOptions"></div>
+      <button type="button" class="back-btn" id="backStep2">← Назад</button>
+    </div>
+
+    <div class="quiz-step" data-step="3">
+      <h3>3. Ваши данные</h3>
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="hidden" name="goal" id="goalInput">
+      <input type="hidden" name="params" id="paramsInput">
+      <button type="submit" class="btn" id="submitBtn">Отправить заявку</button>
+      <button type="button" class="back-btn" id="backStep3">← Назад</button>
+    </div>
+  </form>
+
+  <div id="quizSuccess" class="success">
+    ✅ Заявка принята! Наш менеджер свяжется с вами.
+    <br><br>
+    <button class="btn menu-btn" id="menuBtn">В главное меню</button>
+  </div>
+</section>
+
+<section class="features">
+  <h2>Почему выбирают FinCraft?</h2>
+  <div class="grid">
+    <div class="feature">✅ Всё абсолютно бесплатно</div>
+    <div class="feature">⚡ Быстрый подбор за 60 секунд</div>
+    <div class="feature">🏦 Только надёжные банки и компании</div>
+    <div class="feature">📞 Поддержка и консультация 24/7</div>
+  </div>
+</section>
+
+<section class="contact container" id="contact">
+  <h2>Связаться с нами</h2>
+  <form action="https://formspree.io/f/meolppbk" method="POST" class="contact-form">
+    <input type="email" name="email" placeholder="Ваш email" required>
+    <textarea name="message" placeholder="Ваше сообщение" required></textarea>
+    <button type="submit" class="btn">Отправить</button>
+  </form>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
